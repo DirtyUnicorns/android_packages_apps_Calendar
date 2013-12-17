@@ -131,14 +131,14 @@
 
         <activity android:name=".selectcalendars.SelectVisibleCalendarsActivity"
             android:label="@string/select_visible_calendars_title"
-            android:theme="@android:style/Theme.Holo.Light"/>
+            android:theme="@style/Theme_Manifest"/>
 
         <activity android:name=".selectcalendars.SelectSyncedCalendarsMultiAccountActivity"
             android:label="@string/select_synced_calendars_title"
-            android:theme="@android:style/Theme.Holo.Light"/>
+            android:theme="@style/Theme_Manifest"/>
 
         <activity android:name="CalendarSettingsActivity" android:label="@string/preferences_title"
-            android:theme="@android:style/Theme.Holo.Light"/>
+            android:theme="@style/Theme_Manifest"/>
 
         <!-- Declarations for search -->
         <!-- Make all activities a searchable context -->
