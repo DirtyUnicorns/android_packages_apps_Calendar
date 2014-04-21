@@ -443,6 +443,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         prefs.registerOnSharedPreferenceChangeListener(this);
 
         mContentResolver = getContentResolver();
+        if (getResources().getBoolean(R.bool.show_delete_events_menu)) {
+            getLoaderManager().initLoader(0, null, this);
+        }
     }
 
     private long parseViewAction(final Intent intent) {
@@ -567,6 +570,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         invalidateOptionsMenu();
 
         mCalIntentReceiver = Utils.setTimeChangesReceiver(this, mTimeChangesUpdater);
+        if (getResources().getBoolean(R.bool.show_delete_events_menu)) {
+            getLoaderManager().initLoader(0, null, this);
+        }
     }
 
     @Override
