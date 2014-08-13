@@ -43,6 +43,10 @@
         android:actionViewClass="android.widget.SearchView"
         android:imeOptions="actionSearch" />
     <item
+        android:id="@+id/action_goto"
+        android:title="@string/menu_goto"
+        android:showAsAction="never"/>
+    <item
         android:id="@+id/action_select_visible_calendars"
         android:title="@string/menu_select_visible_calendars"
         android:icon="@drawable/ic_menu_select_visible_calendars_holo_light"

@@ -71,6 +71,8 @@ import com.android.calendar.CalendarController.ViewType;
 import com.android.calendar.agenda.AgendaFragment;
 import com.android.calendar.month.MonthByWeekFragment;
 import com.android.calendar.selectcalendars.SelectVisibleCalendarsFragment;
+import com.android.datetimepicker.date.DatePickerDialog;
+import com.android.datetimepicker.date.DatePickerDialog.OnDateSetListener;
 
 import java.io.IOException;
 import java.util.List;
@@ -740,6 +742,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             mControlsMenu.setTitle(mHideControls ? mShowString : mHideString);
         }
 
+        MenuItem goToMenu = menu.findItem(R.id.action_goto);
+        goToMenu.setVisible(getResources().getBoolean(R.bool.show_menu_goto));
+
         MenuItem menuItem = menu.findItem(R.id.action_today);
         if (Utils.isJellybeanOrLater()) {
             // replace the default top layer drawable of the today icon with a
@@ -804,6 +809,26 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             return true;
         } else if (itemId == R.id.action_search) {
             return false;
+        } else if (itemId == R.id.action_goto) {
+            // Get the current time to display in Dialog.
+            Time time = new Time(mTimeZone);
+            time.setToNow();
+            OnDateSetListener listener = new OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePickerDialog dialog, int year, int monthOfYear,
+                        int dayOfMonth) {
+                    Time newTime = new Time(mTimeZone);
+                    newTime.set(dayOfMonth, monthOfYear, year);
+                    mController.sendEvent(this, EventType.GO_TO, null, null, newTime, -1,
+                            ViewType.CURRENT, CalendarController.EXTRA_GOTO_TIME, null, null);
+                }
+            };
+            DatePickerDialog dialog = DatePickerDialog.newInstance(listener,
+                    time.year, time.month, time.monthDay);
+            dialog.setFirstDayOfWeek(Utils.getFirstDayOfWeekAsCalendar(this));
+            dialog.setYearRange(Utils.YEAR_MIN, Utils.YEAR_MAX);
+            dialog.show(getFragmentManager(), "goto");
+            return true;
         } else {
             return mExtensions.handleItemSelected(item, this);
         }
