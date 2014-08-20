@@ -113,6 +113,15 @@
             </intent-filter>
         </activity-alias>
 
+        <activity android:name="DeleteEventsActivity"
+            android:parentActivityName="com.android.calendar.AllInOneActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/CalendarTheme.WithActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.calendar.AllInOneActivity" />
+        </activity>
+
         <activity android:name="GoogleCalendarUriIntentFilter" android:label="@string/app_label"
             android:theme="@android:style/Theme.NoDisplay"
             android:configChanges="orientation|keyboardHidden">

@@ -754,4 +754,15 @@
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
     <string name="menu_goto">"Go to"</string>
+
+    <!-- Delete Events related -->
+    <string name="menu_delete_events">Delete events</string>
+    <string name="action_select_all">Select all</string>
+    <string name="action_select_none">Deselect all</string>
+    <string name="action_delete">Delete</string>
+    <string name="header_label_all_events">All events</string>
+    <string name="header_label_no_events">No events</string>
+    <string name="title_selected">selected</string>
+    <string name="dialog_delete_message">Delete the selected events?</string>
+    <string name="toast_no_events_selected">No event selected</string>
 </resources>

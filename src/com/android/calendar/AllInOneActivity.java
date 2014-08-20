@@ -34,6 +34,7 @@ import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Intent;
+import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
@@ -281,6 +282,22 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
 
     BroadcastReceiver mCalIntentReceiver;
 
+    private DeleteEventsLoader mDeleteEventsLoader = null;
+    private Loader.OnLoadCompleteListener<Cursor> mDeleteEventsListener =
+            new Loader.OnLoadCompleteListener<Cursor>() {
+        @Override
+        public void onLoadComplete(Loader<Cursor> loader, Cursor cursor) {
+            if (mOptionsMenu == null || cursor == null) return;
+
+            // Update the delete menu's status.
+            MenuItem delEventsMenu = mOptionsMenu.findItem(R.id.action_delete_events);
+            if (delEventsMenu != null) {
+                delEventsMenu.setEnabled(cursor.getCount() != 0);
+            }
+            invalidateOptionsMenu();
+        }
+    };
+
     @Override
     protected void onNewIntent(Intent intent) {
         String action = intent.getAction();
@@ -434,6 +451,12 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         prefs.registerOnSharedPreferenceChangeListener(this);
 
         mContentResolver = getContentResolver();
+
+        if (mDeleteEventsLoader == null
+                && getResources().getBoolean(R.bool.show_delete_events_menu)) {
+            mDeleteEventsLoader = new DeleteEventsLoader(getBaseContext());
+            mDeleteEventsLoader.registerListener(0, mDeleteEventsListener);
+        }
     }
 
     private long parseViewAction(final Intent intent) {
@@ -612,6 +635,13 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
     protected void onDestroy() {
         super.onDestroy();
 
+        if (mDeleteEventsLoader != null && mDeleteEventsListener != null) {
+            mDeleteEventsLoader.unregisterListener(mDeleteEventsListener);
+            mDeleteEventsLoader.reset();
+            mDeleteEventsLoader = null;
+            mDeleteEventsListener = null;
+        }
+
         SharedPreferences prefs = GeneralPreferences.getSharedPreferences(this);
         prefs.unregisterOnSharedPreferenceChangeListener(this);
 
@@ -745,6 +775,12 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         MenuItem goToMenu = menu.findItem(R.id.action_goto);
         goToMenu.setVisible(getResources().getBoolean(R.bool.show_menu_goto));
 
+        MenuItem deleteEventsMenu = menu.findItem(R.id.action_delete_events);
+        deleteEventsMenu.setVisible(getResources().getBoolean(R.bool.show_delete_events_menu));
+        if (mDeleteEventsLoader != null) {
+            mDeleteEventsLoader.startLoading();
+        }
+
         MenuItem menuItem = menu.findItem(R.id.action_today);
         if (Utils.isJellybeanOrLater()) {
             // replace the default top layer drawable of the today icon with a
@@ -828,6 +864,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             dialog.setFirstDayOfWeek(Utils.getFirstDayOfWeekAsCalendar(this));
             dialog.setYearRange(Utils.YEAR_MIN, Utils.YEAR_MAX);
             dialog.show(getFragmentManager(), "goto");
+            return true;
+        } else if (itemId == R.id.action_delete_events) {
+            startActivity(new Intent(this, DeleteEventsActivity.class));
             return true;
         } else {
             return mExtensions.handleItemSelected(item, this);
