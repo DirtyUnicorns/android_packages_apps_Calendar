@@ -765,4 +765,7 @@
     <string name="title_selected">selected</string>
     <string name="dialog_delete_message">Delete the selected events?</string>
     <string name="toast_no_events_selected">No event selected</string>
+
+    <!-- The toast for event's length limit. -->
+    <string name="alert_event_length_limit">The length of \"<xliff:g id="item">%s</xliff:g>\" must less than <xliff:g id="count">%d</xliff:g> characters.</string>
 </resources>

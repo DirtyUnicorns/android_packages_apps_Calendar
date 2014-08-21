@@ -37,7 +37,9 @@ import android.provider.CalendarContract.Events;
 import android.provider.CalendarContract.Reminders;
 import android.provider.Settings;
 import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.InputFilter.LengthFilter;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.text.format.Time;
@@ -65,6 +67,7 @@ import android.widget.ResourceCursorAdapter;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 
 import com.android.calendar.CalendarEventModel;
@@ -115,6 +118,13 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
     private static final String FRAG_TAG_TIME_PICKER = "timePickerDialogFragment";
     private static final String FRAG_TAG_TIME_ZONE_PICKER = "timeZonePickerDialogFragment";
     private static final String FRAG_TAG_RECUR_PICKER = "recurrencePickerDialogFragment";
+
+    // The max length for event's title.
+    private static final int MAX_LENGTH_WHAT = 100;
+    // The max length for event's location.
+    private static final int MAX_LENGTH_WHERE = 100;
+    // The max length for event's description.
+    private static final int MAX_LENGTH_DESCRIPTION = 200;
 
     ArrayList<View> mEditOnlyList = new ArrayList<View>();
     ArrayList<View> mEditViewList = new ArrayList<View>();
@@ -865,6 +875,18 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
             public void onNothingSelected(AdapterView<?> arg0) { }
         });
 
+        if (activity.getResources().getBoolean(R.bool.length_limit_for_event_content)) {
+            mTitleTextView.setFilters(new InputFilter[] {
+                new MyLengthFilter(MAX_LENGTH_WHAT, activity.getString(R.string.hint_what))
+            });
+            mLocationTextView.setFilters(new InputFilter[] {
+                new MyLengthFilter(MAX_LENGTH_WHERE, activity.getString(R.string.hint_where))
+            });
+            mDescriptionTextView.setFilters(new InputFilter[] {
+                new MyLengthFilter(MAX_LENGTH_DESCRIPTION,
+                        activity.getString(R.string.hint_description))
+            });
+        }
 
         mDescriptionTextView.setTag(mDescriptionTextView.getBackground());
         mAttendeesList.setTag(mAttendeesList.getBackground());
@@ -1848,5 +1870,33 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    /**
+     * It will prompt the toast if the text length greater than the given length.
+     */
+    private class MyLengthFilter extends LengthFilter {
+        private int mMaxLength;
+        private String mItemLabel;
+
+        public MyLengthFilter(int max, String itemLabel) {
+            super(max);
+            mMaxLength = max;
+            mItemLabel = itemLabel;
+        }
+
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest,
+                int dstart, int dend) {
+            CharSequence result = super.filter(source, start, end, dest, dstart, dend);
+            if (result != null) {
+                // If the result is not null, it means the text length is greater than
+                // the given length. We will prompt the toast to alert the user.
+                String alert = mActivity.getString(R.string.alert_event_length_limit, mItemLabel,
+                        mMaxLength);
+                Toast.makeText(mActivity, alert, Toast.LENGTH_LONG).show();
+            }
+            return result;
+        }
     }
 }

@@ -292,4 +292,7 @@
     <string name="title_selected">已選擇</string>
     <string name="dialog_delete_message">刪除選擇的活動？</string>
     <string name="toast_no_events_selected">沒有選擇任何活動</string>
+
+    <!-- The toast for event's length limit. -->
+    <string name="alert_event_length_limit"><xliff:g id="item">%s</xliff:g>必須少於<xliff:g id="count">%d</xliff:g>個字符。</string>
 </resources>
