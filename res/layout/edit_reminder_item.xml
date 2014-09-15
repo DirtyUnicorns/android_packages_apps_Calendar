@@ -27,8 +27,8 @@
         android:layout_width="0dip"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="top|left"
-        android:layout_marginRight="0dip"
+        android:gravity="top|start"
+        android:layout_marginEnd="0dip"
         android:contentDescription="@string/accessibility_reminder_time"
         android:entries="@array/reminder_minutes_labels"/>
 
@@ -37,8 +37,8 @@
         android:layout_width="0dip"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="top|left"
-        android:layout_marginRight="0dip"
+        android:gravity="top|start"
+        android:layout_marginEnd="0dip"
         android:contentDescription="@string/accessibility_reminder_type"
         android:entries="@array/reminder_methods_labels"/>
 

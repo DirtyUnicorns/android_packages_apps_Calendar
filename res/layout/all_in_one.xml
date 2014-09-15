@@ -28,8 +28,8 @@
             android:id="@+id/home_time"
             android:layout_width="match_parent"
             android:layout_height="16dip"
-            android:gravity="center_vertical|right"
-            android:paddingRight="8dip"
+            android:gravity="center_vertical|end"
+            android:paddingEnd="8dip"
             android:textSize="12sp"
             android:background="@color/calendar_date_banner_background"
             android:visibility="gone" />

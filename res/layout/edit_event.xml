@@ -47,8 +47,8 @@
             <View android:id="@+id/event_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="1dip"
-                android:layout_marginRight="1dip"
+                android:layout_marginStart="1dip"
+                android:layout_marginEnd="1dip"
                 android:layout_marginTop="1dip"
                 android:layout_marginBottom="1dip"
                 android:layout_gravity="center_horizontal|top"
@@ -79,9 +79,9 @@
                 android:layout_width="25dip"
                 android:layout_height="25dip"
                 android:visibility="gone"
-                android:layout_marginLeft="0dip"
+                android:layout_marginStart="0dip"
                 android:layout_marginTop="0dip"
-                android:layout_gravity="left|top"/>
+                android:layout_gravity="start|top"/>
         </FrameLayout>
     </ScrollView>
 </LinearLayout>

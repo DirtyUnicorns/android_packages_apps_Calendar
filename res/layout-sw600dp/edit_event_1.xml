@@ -32,8 +32,8 @@
                 android:id="@+id/calendar_selector_wrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dip"
-                android:layout_marginRight="12dip"
+                android:layout_marginStart="12dip"
+                android:layout_marginEnd="12dip"
                 android:focusable="true" >
                 <Spinner
                     android:id="@+id/calendars_spinner"
@@ -42,8 +42,8 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="0dip"
-                    android:layout_marginRight="0dip"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
                     android:gravity="center_vertical"
                     android:prompt="@string/edit_event_calendar_label" />
                 <ImageButton
@@ -74,17 +74,17 @@
             android:id="@+id/calendar_textview_with_colorpicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dip"
-            android:layout_marginRight="12dip" >
+            android:layout_marginStart="12dip"
+            android:layout_marginEnd="12dip" >
             <TextView
                 android:id="@+id/calendar_textview"
                 style="@style/TextAppearance.EditEvent_Value"
                 android:layout_width="0dip"
                 android:layout_weight="1"
-                android:paddingLeft="12dip"
-                android:paddingRight="12dip"
-                android:layout_marginLeft="0dip"
-                android:layout_marginRight="0dip"
+                android:paddingStart="12dip"
+                android:paddingEnd="12dip"
+                android:layout_marginStart="0dip"
+                android:layout_marginEnd="0dip"
                 android:layout_height="wrap_content"
                 android:minHeight="48dip"
                 android:textColor="#FFFFFFFF" />
@@ -144,8 +144,8 @@
             style="@style/TextAppearance.EditEvent_Label" />
         <TextView
             android:id="@+id/when"
-            android:layout_marginLeft="24dip"
-            android:layout_marginRight="24dip"
+            android:layout_marginStart="24dip"
+            android:layout_marginEnd="24dip"
             style="@style/TextAppearance.EditEvent_Value" />
     </TableRow>
 
@@ -180,10 +180,10 @@
         android:focusable="true">
         <TextView/>
         <LinearLayout android:orientation="horizontal"
-            android:layout_marginLeft="16dip"
-            android:layout_marginRight="16dip"
-            android:paddingLeft="8dip"
-            android:paddingRight="0dip"
+            android:layout_marginStart="16dip"
+            android:layout_marginEnd="16dip"
+            android:paddingStart="8dip"
+            android:paddingEnd="0dip"
             android:paddingBottom="5dip">
             <TextView android:id="@+id/start_date_home_tz"
                 android:layout_width="wrap_content"
@@ -231,10 +231,10 @@
         android:focusable="true">
         <TextView/>
         <LinearLayout android:orientation="horizontal"
-            android:layout_marginLeft="16dip"
-            android:layout_marginRight="16dip"
-            android:paddingLeft="8dip"
-            android:paddingRight="0dip"
+            android:layout_marginStart="16dip"
+            android:layout_marginEnd="16dip"
+            android:paddingStart="8dip"
+            android:paddingEnd="0dip"
             android:paddingBottom="5dip">
             <TextView android:id="@+id/end_date_home_tz"
                 android:layout_width="wrap_content"
@@ -261,8 +261,8 @@
             style="@style/TextAppearance.EditEvent_Label" />
         <TextView
             android:id="@+id/timezone_textView"
-            android:layout_marginLeft="24dip"
-            android:layout_marginRight="24dip"
+            android:layout_marginStart="24dip"
+            android:layout_marginEnd="24dip"
             style="@style/TextAppearance.EditEvent_Value" />
     </TableRow>
 
@@ -278,8 +278,8 @@
             android:id="@+id/is_all_day"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="16dip"
-            android:paddingLeft="8dip"
+            android:layout_marginStart="16dip"
+            android:paddingStart="8dip"
             android:contentDescription="@string/accessibility_all_day"
             android:gravity="center_vertical" />
     </TableRow>
@@ -310,8 +310,8 @@
         <RadioGroup
             android:id="@+id/response_value"
             android:orientation="horizontal"
-            android:layout_marginLeft="16dip"
-            android:layout_marginRight="8dip"
+            android:layout_marginStart="16dip"
+            android:layout_marginEnd="8dip"
             android:paddingTop="11dip">
             <RadioButton
                 android:id="@+id/response_yes"
@@ -422,7 +422,7 @@
                 android:id="@+id/reminder_items_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dip"
+                android:layout_marginEnd="8dip"
                 android:orientation="vertical"
                 android:gravity="center_vertical|right"  />
             <Button

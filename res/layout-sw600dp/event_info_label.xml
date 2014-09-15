@@ -19,9 +19,9 @@
     android:layout_width="match_parent"
     android:layout_height="32dip"
     android:layout_marginTop="4dip"
-    android:layout_marginLeft="8dip"
+    android:layout_marginStart="8dip"
     android:layout_gravity="center_vertical"
-    android:paddingLeft="8dip"
+    android:paddingStart="8dip"
     android:textAppearance="?android:attr/textAppearanceMedium"
     style="?android:attr/listSeparatorTextViewStyle"
     android:textColor="@color/event_info_label_color" />

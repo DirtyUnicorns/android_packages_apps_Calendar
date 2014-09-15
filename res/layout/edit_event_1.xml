@@ -35,8 +35,8 @@
             android:layout_gravity="center_vertical"
             android:paddingBottom="10dip"
             android:paddingTop="10dip"
-            android:layout_marginLeft="12dip"
-            android:layout_marginRight="12dip"
+            android:layout_marginStart="12dip"
+            android:layout_marginEnd="12dip"
             android:gravity="center_vertical" />
         <ImageButton
             android:id="@+id/change_color_new_event"
@@ -46,7 +46,7 @@
             android:layout_width="48dip"
             android:layout_height="48dip"
             android:enabled="false"
-            android:layout_marginRight="8dip"
+            android:layout_marginEnd="8dip"
             android:layout_gravity="center_vertical"
             android:padding="8dip"
             android:scaleType="centerInside"
@@ -72,16 +72,16 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textColor="#FFFFFFFF"
-                android:layout_marginLeft="24dip"
-                android:layout_marginRight="24dip"
+                android:layout_marginStart="24dip"
+                android:layout_marginEnd="24dip"
                 style="@style/TextAppearance.EditEvent_Value" />
             <TextView
                 android:id="@+id/calendar_textview_secondary"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textColor="#FFFFFFFF"
-                android:layout_marginLeft="24dip"
-                android:layout_marginRight="24dip"
+                android:layout_marginStart="24dip"
+                android:layout_marginEnd="24dip"
                 android:textSize="14sp"
                 style="@style/TextAppearance.EditEvent_Value" />
         </LinearLayout>
@@ -93,7 +93,7 @@
             android:layout_width="48dip"
             android:layout_height="48dip"
             android:enabled="false"
-            android:layout_marginRight="8dip"
+            android:layout_marginEnd="8dip"
             android:layout_gravity="center_vertical"
             android:padding="8dip"
             android:scaleType="centerInside"
@@ -155,8 +155,8 @@
             android:id="@+id/when"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="24dip"
-            android:layout_marginRight="24dip"
+            android:layout_marginStart="24dip"
+            android:layout_marginEnd="24dip"
             style="@style/TextAppearance.EditEvent_Value" />
     </LinearLayout>
 
@@ -185,8 +185,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:singleLine="true"
-                android:paddingRight="4dp"
-                android:layout_marginRight="0dp"
+                android:paddingEnd="4dp"
+                android:layout_marginEnd="0dp"
                 android:contentDescription="@string/accessibility_pick_start_date"
                 style="@style/TextAppearance.EditEvent_SpinnerButton" />
             <Button
@@ -195,7 +195,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:contentDescription="@string/accessibility_pick_start_time"
-                android:layout_marginLeft="0dip"
+                android:layout_marginStart="0dip"
                 style="@style/TextAppearance.EditEvent_SpinnerButton" />
         </LinearLayout>
     </LinearLayout>
@@ -205,20 +205,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dip"
-        android:layout_marginLeft="24dip"
-        android:layout_marginRight="16dip"
+        android:layout_marginStart="24dip"
+        android:layout_marginEnd="16dip"
         android:focusable="true">
         <TextView android:id="@+id/start_date_home_tz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             style="@style/TextAppearance.EditEvent_homeTime" />
         <TextView android:id="@+id/start_time_home_tz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             style="@style/TextAppearance.EditEvent_homeTime" />
     </LinearLayout>
 
@@ -247,8 +247,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:singleLine="true"
-                android:paddingRight="4dp"
-                android:layout_marginRight="0dp"
+                android:paddingEnd="4dp"
+                android:layout_marginEnd="0dp"
                 android:contentDescription="@string/accessibility_pick_end_date"
                 style="@style/TextAppearance.EditEvent_SpinnerButton" />
             <Button
@@ -257,7 +257,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:contentDescription="@string/accessibility_pick_end_time"
-                android:layout_marginLeft="0dip"
+                android:layout_marginStart="0dip"
                 style="@style/TextAppearance.EditEvent_SpinnerButton" />
         </LinearLayout>
     </LinearLayout>
@@ -269,19 +269,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dip"
-        android:layout_marginLeft="24dip"
-        android:layout_marginRight="16dip">
+        android:layout_marginStart="24dip"
+        android:layout_marginEnd="16dip">
         <TextView android:id="@+id/end_date_home_tz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             style="@style/TextAppearance.EditEvent_homeTime" />
         <TextView android:id="@+id/end_time_home_tz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             style="@style/TextAppearance.EditEvent_homeTime" />
     </LinearLayout>
 
@@ -300,8 +300,8 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
-            android:layout_marginLeft="16dip"
-            android:layout_marginRight="0dip"
+            android:layout_marginStart="16dip"
+            android:layout_marginEnd="0dip"
             android:contentDescription="@string/accessibility_all_day"/>
         <TextView
             android:id="@+id/is_all_day_label"
@@ -309,8 +309,9 @@
             android:layout_height="wrap_content"
             android:layout_width="0dip"
             android:layout_weight="1"
-            android:layout_gravity="center_vertical|left"
-            android:gravity="center_vertical|left"
+            android:layout_marginStart="-8dip"
+            android:layout_gravity="center_vertical|start"
+            android:gravity="center_vertical|start"
             style="@style/TextAppearance.EditEvent_Small" />
     </LinearLayout>
 
@@ -327,8 +328,8 @@
             android:id="@+id/timezone_textView"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="24dip"
-            android:layout_marginRight="24dip"
+            android:layout_marginStart="24dip"
+            android:layout_marginEnd="24dip"
             style="@style/TextAppearance.EditEvent_Value" />
     </LinearLayout>
 
@@ -341,7 +342,7 @@
         android:minHeight="48dip">
         <Button
             android:id="@+id/timezone_button"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:contentDescription="@string/accessibility_pick_time_zone"

@@ -45,7 +45,7 @@
             android:textAppearance="?android:attr/textAppearanceLargeInverse"
             android:textColor="@android:color/black"
             android:layout_marginBottom="1dip"
-            android:paddingLeft="5dip"
+            android:paddingStart="5dip"
             android:text="@string/loading"/>
 
     </LinearLayout>

@@ -31,18 +31,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="4dip"
+        android:paddingStart="4dip"
         android:singleLine="true"
         android:textSize="14sp"
         android:textStyle="bold"
         android:ellipsize="marquee"
         android:textColor="@color/appwidget_title"
-        android:gravity="center_vertical|left"
+        android:gravity="center_vertical|start"
         style="?android:attr/textAppearanceMediumInverse" />
 </FrameLayout>

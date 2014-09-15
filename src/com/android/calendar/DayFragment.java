@@ -22,6 +22,7 @@ import com.android.calendar.CalendarController.EventType;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
 import android.widget.ViewSwitcher;
 import android.widget.ViewSwitcher.ViewFactory;
+
+import java.util.Locale;
 
 /**
  * This is the base class for Day and Week Activities.
@@ -187,7 +190,7 @@ public class DayFragment extends Fragment implements CalendarController.EventHan
             currentView.setSelected(goToTime, ignoreTime, animateToday);
         } else {
             // Figure out which way to animate
-            if (diff > 0) {
+            if (diff > 0 ^ shallMirror()) {
                 mViewSwitcher.setInAnimation(mInAnimationForward);
                 mViewSwitcher.setOutAnimation(mOutAnimationForward);
             } else {
@@ -272,5 +275,10 @@ public class DayFragment extends Fragment implements CalendarController.EventHan
         } else if (msg.eventType == EventType.EVENTS_CHANGED) {
             eventsChanged();
         }
+    }
+
+    public boolean shallMirror() {
+        return View.LAYOUT_DIRECTION_RTL ==
+                TextUtils.getLayoutDirectionFromLocale(Locale.getDefault());
     }
 }

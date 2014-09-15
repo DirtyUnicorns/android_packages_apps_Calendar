@@ -45,7 +45,8 @@
             android:taskAffinity="android.task.calendar"
             android:hardwareAccelerated="true"
             android:backupAgent="com.android.calendar.CalendarBackupAgent"
-            android:requiredAccountType="*" >
+            android:requiredAccountType="*"
+            android:supportsRtl="true" >
 
         <meta-data android:name="com.google.android.backup.api_key"
                 android:value="AEdPqrEAAAAIM256oVOGnuSel5QKDpL8je_T65ZI8rFnDinssA" />
@@ -93,6 +94,7 @@
         </activity>
 
         <activity android:name=".event.EditEventActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@style/CalendarTheme.WithActionBar">
         </activity>
 
@@ -147,6 +149,7 @@
             android:theme="@android:style/Theme.Holo.Light"/>
 
         <activity android:name="CalendarSettingsActivity" android:label="@string/preferences_title"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Holo.Light"/>
 
         <!-- Declarations for search -->

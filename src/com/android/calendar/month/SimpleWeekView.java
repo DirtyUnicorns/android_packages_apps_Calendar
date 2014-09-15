@@ -367,11 +367,19 @@ public class SimpleWeekView extends View {
      */
     public Time getDayFromLocation(float x) {
         int dayStart = mShowWeekNum ? (mWidth - mPadding * 2) / mNumCells + mPadding : mPadding;
-        if (x < dayStart || x > mWidth - mPadding) {
+        int dayEnd = mPadding;
+        if (isLayoutRtl()) {
+            dayEnd = dayStart;
+            dayStart = 0;
+        }
+        if (x < dayStart || x > mWidth - dayEnd) {
             return null;
         }
         // Selection is (x - start) / (pixels/day) == (x -s) * day / pixels
-        int dayPosition = (int) ((x - dayStart) * mNumDays / (mWidth - dayStart - mPadding));
+        int dayPosition = (int) ((x - dayStart) * mNumDays / (mWidth - dayStart - dayEnd));
+        if (isLayoutRtl()) {
+            dayPosition = mNumDays - 1 - dayPosition;
+        }
         int day = mFirstJulianDay + dayPosition;
 
         Time time = new Time(mTimeZone);

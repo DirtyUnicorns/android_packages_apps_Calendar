@@ -19,9 +19,9 @@
     android:id="@+id/timezone_footer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dip"
+    android:layout_marginStart="10dip"
     android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:paddingLeft="10dip"
-    android:paddingRight="10dip"
+    android:paddingStart="10dip"
+    android:paddingEnd="10dip"
     style="?android:attr/textAppearanceMedium" />

@@ -38,7 +38,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:clickable="false"
         android:focusable="false" >
@@ -49,7 +49,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/checkbox"
+        android:layout_toEndOf="@id/checkbox"
         android:focusable="false"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="bold" >
@@ -60,7 +60,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/event_title"
-        android:layout_toRightOf="@id/checkbox"
+        android:layout_toEndOf="@id/checkbox"
         android:focusable="false" >
     </TextView>
 
@@ -69,7 +69,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/event_time"
-        android:layout_toRightOf="@id/checkbox"
+        android:layout_toEndOf="@id/checkbox"
         android:focusable="false" >
     </TextView>
 
