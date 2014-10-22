@@ -86,7 +86,7 @@ public class RecurrencePickerDialog extends DialogFragment implements OnItemSele
 
     private DatePickerDialog mDatePickerDialog;
 
-    private class RecurrenceModel implements Parcelable {
+    private static class RecurrenceModel implements Parcelable {
 
         // Should match EventRecurrence.DAILY, etc
         static final int FREQ_DAILY = 0;
@@ -197,6 +197,22 @@ public class RecurrencePickerDialog extends DialogFragment implements OnItemSele
         public RecurrenceModel() {
         }
 
+        public RecurrenceModel(Parcel in) {
+            freq = in.readInt();
+            interval = in.readInt();
+            end = in.readInt();
+            endDate.year = in.readInt();
+            endDate.month = in.readInt();
+            endDate.monthDay = in.readInt();
+            endCount = in.readInt();
+            in.readBooleanArray(weeklyByDayOfWeek);
+            monthlyRepeat = in.readInt();
+            monthlyByMonthDay = in.readInt();
+            monthlyByDayOfWeek = in.readInt();
+            monthlyByNthDayOfWeek = in.readInt();
+            recurrenceState = in.readInt();
+        }
+
         @Override
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(freq);
@@ -213,6 +229,17 @@ public class RecurrencePickerDialog extends DialogFragment implements OnItemSele
             dest.writeInt(monthlyByNthDayOfWeek);
             dest.writeInt(recurrenceState);
         }
+        public static final Parcelable.Creator<RecurrenceModel> CREATOR =
+                new Parcelable.Creator<RecurrenceModel>() {
+            @Override
+            public RecurrenceModel createFromParcel(Parcel source) {
+                return new RecurrenceModel(source);
+            }
+            @Override
+            public RecurrenceModel[] newArray(int size) {
+                return new RecurrenceModel[size];
+            }
+        };
     }
 
     class minMaxTextWatcher implements TextWatcher {
