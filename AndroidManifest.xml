@@ -94,7 +94,6 @@
         </activity>
 
         <activity android:name=".event.EditEventActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@style/CalendarTheme.WithActionBar">
         </activity>
 
