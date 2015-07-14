@@ -127,10 +127,15 @@ public class CalendarController {
 
         // select which calendars to display
         final long LAUNCH_SELECT_VISIBLE_CALENDARS = 1L << 11;
+
+        // events for showing and hiding the floating action button (FAB)
+        final long SHOW_FAB = 1L << 12;
+
+        final long HIDE_FAB = 1L << 13;
     }
 
     /**
-     * One of the Agenda/Day/Week/Month view types
+     * One of the Agenda/Day/Week/Month/Year view types
      */
     public interface ViewType {
         final int DETAIL = -1;
@@ -140,7 +145,8 @@ public class CalendarController {
         final int WEEK = 3;
         final int MONTH = 4;
         final int EDIT = 5;
-        final int MAX_VALUE = 5;
+        final int YEAR = 6;
+        final int MAX_VALUE = 6;
     }
 
     public static class EventInfo {
