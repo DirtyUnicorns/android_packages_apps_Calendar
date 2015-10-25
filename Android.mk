@@ -6,6 +6,7 @@ chips_dir := ../../../frameworks/opt/chips/res
 color_picker_dir := ../../../frameworks/opt/colorpicker/res
 datetimepicker_dir := ../../../frameworks/opt/datetimepicker/res
 timezonepicker_dir := ../../../frameworks/opt/timezonepicker/res
+appcompat_dir := ../../../$(SUPPORT_LIBRARY_ROOT)/v7/appcompat/res
 res_dirs := $(chips_dir) $(color_picker_dir) $(datetimepicker_dir) $(timezonepicker_dir) res
 src_dirs := src
 
@@ -29,7 +30,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
         android-opt-datetimepicker \
         android-opt-timezonepicker \
         android-support-v4 \
-        calendar-common
+        calendar-common \
+        android-support-v7-appcompat
 
 LOCAL_SDK_VERSION := current
 
@@ -45,8 +47,10 @@ LOCAL_AAPT_FLAGS += --extra-packages com.android.ex.chips
 LOCAL_AAPT_FLAGS += --extra-packages com.android.colorpicker
 LOCAL_AAPT_FLAGS += --extra-packages com.android.datetimepicker
 LOCAL_AAPT_FLAGS += --extra-packages com.android.timezonepicker
+LOCAL_AAPT_FLAGS += --extra-packages android.support.v7.appcompat
 
 include $(BUILD_PACKAGE)
 
 # Use the following include to make our test apk.
 include $(call all-makefiles-under,$(LOCAL_PATH))
+
