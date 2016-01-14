@@ -117,6 +117,8 @@ public class AlarmScheduler {
                 queryNextReminderAndSchedule(instancesCursor, context,
                         context.getContentResolver(), alarmManager, batchSize, currentMillis);
             }
+        } catch (Exception e) {
+            // can fail because of permissions
         } finally {
             if (instancesCursor != null) {
                 instancesCursor.close();

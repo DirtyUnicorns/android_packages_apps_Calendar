@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:ellipsize="marquee"
-            style="?android:attr/textAppearanceMedium"
+            style="@style/TextAppearance.SelectCalendar_Name"
             android:duplicateParentState="true" />
 
         <TextView
