@@ -179,4 +179,9 @@
     <color name="edit_event_action_text_color">#FFFFFFFF</color>
     <color name="edit_event_icon_tint_color">#FFFFFFFF</color>
 
+    <color name="calendar_textview">#FFFFFFFF</color>
+    <color name="calendar_textview_secondary">#FFFFFFFF</color>
+    <color name="reminder_add">#FF777777</color>
+    <color name="loading_message_background">#FFFFFFFF</color>
+
 </resources>

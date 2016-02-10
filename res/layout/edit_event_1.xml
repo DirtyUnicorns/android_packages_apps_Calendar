@@ -71,7 +71,7 @@
                 android:id="@+id/calendar_textview"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:textColor="#FFFFFFFF"
+                android:textColor="@color/calendar_textview"
                 android:layout_marginLeft="24dip"
                 android:layout_marginRight="24dip"
                 style="@style/TextAppearance.EditEvent_Value" />
@@ -79,7 +79,7 @@
                 android:id="@+id/calendar_textview_secondary"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:textColor="#FFFFFFFF"
+                android:textColor="@color/calendar_textview_secondary"
                 android:layout_marginLeft="24dip"
                 android:layout_marginRight="24dip"
                 android:textSize="14sp"

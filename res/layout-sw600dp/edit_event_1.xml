@@ -87,7 +87,7 @@
                 android:layout_marginRight="0dip"
                 android:layout_height="wrap_content"
                 android:minHeight="48dip"
-                android:textColor="#FFFFFFFF" />
+                android:textColor="@color/calendar_textview" />
             <ImageButton
                 android:id="@+id/change_color_existing_event"
                 style="?android:attr/buttonBarButtonStyle"
