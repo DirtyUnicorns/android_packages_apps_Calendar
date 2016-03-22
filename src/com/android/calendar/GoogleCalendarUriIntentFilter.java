@@ -159,6 +159,7 @@ public class GoogleCalendarUriIntentFilter extends Activity {
 
                     if (eventCursor == null || eventCursor.getCount() == 0) {
                         Log.i(TAG, "NOTE: found no matches on event with id='" + syncId + "'");
+                        finish();
                         return;
                     }
                     Log.i(TAG, "NOTE: found " + eventCursor.getCount()
