@@ -170,9 +170,9 @@
     <color name="recurrence_picker_background">#fff2f2f2</color>
     <color name="recurrence_bubble_text_normal">#ff737373</color>
 
-    <color name="accent">#4285f4</color>
-    <color name="primary_color">#3F51B5</color>
-    <color name="primary_dark_color">#303F9F</color>
+    <color name="accent">#108ed9</color>
+    <color name="primary_color">#1ab1f5</color>
+    <color name="primary_dark_color">#1199ea</color>
     <color name="month_focus_month_bgcolor">#FFFFFFFF</color>
     <color name="floating_action_button_icon_color">#ffffff</color>
 
