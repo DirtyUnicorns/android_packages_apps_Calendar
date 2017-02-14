@@ -183,5 +183,27 @@
     <color name="calendar_textview_secondary">#FFFFFFFF</color>
     <color name="reminder_add">#FF777777</color>
     <color name="loading_message_background">#FFFFFFFF</color>
+    <color name="edit_event_bg_color">#FFFFFFFF</color>
+    <color name="edit_event_landscape_bg_color">#FFE9E9E9</color>
+    <color name="action_mode_background_color">#F0B0B0B0</color>
+    <color name="agenda_background_color">#FFFFFFFF</color>
+    <color name="agenda_event_info_background_color">#FFFFFFFF</color>
+    <color name="app_widget_day_of_the_week_shadow_color">#0dffffff</color>
+    <color name="calendar_spinner_item_calendar_name_color">#FFFFFFFF</color>
+    <color name="calendar_spinner_item_account_name_color">#FFFFFFFF</color>
+    <color name="edit_event_single_column_loading_message_color">#FFFFFFFF</color>
+    <color name="edit_event_single_column_event_bg_color">#FFFFFFFF</color>
+    <color name="edit_event_single_column_scroll_view_background_color">#FFEEEEEE</color>
+    <color name="event_info_dialog_bg_color">#fafafa</color>
+    <color name="event_info_dialog_email_attendees_button_color">#777777</color>
+    <color name="event_info_dialog_launch_custom_app_button_color">#777777</color>
+    <color name="event_info_dialog_reminder_add_color">#FF777777</color>
+    <color name="event_info_background_color">#fafafa</color>
+    <color name="event_info_email_attendees_button_color">#777777</color>
+    <color name="event_info_launch_custom_app_button_color">#777777</color>
+    <color name="event_info_reminder_add_color">#FF777777</color>
+    <color name="expandable_textview_expand_collapse_color">#00000000</color>
+    <color name="select_calendars_list_selector_color">#00000000</color>
+    <color name="select_calendars_cache_color_hint_color">#00000000</color>
 
 </resources>
