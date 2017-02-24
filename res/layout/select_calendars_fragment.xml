@@ -35,12 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_gravity="center_horizontal"
         android:textColor="@color/calendars_to_display_button_text_color"
         android:onClick="handleSelectSyncedCalendarsClicked"
-        android:text="@string/select_synced_calendars_button"
-        android:background="@color/calendars_to_display_button_color"
-        android:textSize="12sp"
-        android:padding="10dp"
-        android:layout_marginBottom="8dp"
-        android:layout_gravity="center_horizontal" />
+        android:text="@string/select_synced_calendars_button" />
 </LinearLayout>
