@@ -770,4 +770,8 @@
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
     <string name="go_to">Go to</string>
+
+    <!-- Calendar Widget -->
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
 </resources>
