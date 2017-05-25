@@ -41,4 +41,8 @@
          user to go to the calendars to display [CHAR LIMIT=20] -->
     <string name="go_to">Ugrás</string>
 
+    <!-- Calendar Widget -->
+    <string name="previous_month">Előző hónap</string>
+    <string name="next_month">Következő hónap</string>
+
 </resources>
